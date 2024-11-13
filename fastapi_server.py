@@ -70,14 +70,19 @@ def process(
     dino_labled_img_orig, label_coordinates_orig, parsed_content_list_orig = get_som_labeled_img(image_save_path, yolo_model_orig, BOX_TRESHOLD = box_threshold, output_coord_in_ratio=True, ocr_bbox=ocr_bbox,draw_bbox_config=draw_bbox_config, caption_model_processor=caption_model_processor, ocr_text=text,iou_threshold=iou_threshold, imgsz=imgsz)  
     image_orig = Image.open(io.BytesIO(base64.b64decode(dino_labled_img_orig)))
     print('finish processing')
-    parsed_content_list_orig = '\n'.join(parsed_content_list_orig)
+    #parsed_content_list_orig = '\n'.join(parsed_content_list_orig)
 
     # print('prompt:', prompt)
-    dino_labled_img, label_coordinates, parsed_content_list = get_som_labeled_img(image_save_path, yolo_model, BOX_TRESHOLD = box_threshold, output_coord_in_ratio=True, ocr_bbox=ocr_bbox,draw_bbox_config=draw_bbox_config, caption_model_processor=caption_model_processor, ocr_text=text,iou_threshold=iou_threshold, imgsz=imgsz)  
-    image = Image.open(io.BytesIO(base64.b64decode(dino_labled_img)))
-    print('finish processing')
+    
+    # dino_labled_img, label_coordinates, parsed_content_list = get_som_labeled_img(image_save_path, yolo_model, BOX_TRESHOLD = box_threshold, output_coord_in_ratio=True, ocr_bbox=ocr_bbox,draw_bbox_config=draw_bbox_config, caption_model_processor=caption_model_processor, ocr_text=text,iou_threshold=iou_threshold, imgsz=imgsz)  
+    # image = Image.open(io.BytesIO(base64.b64decode(dino_labled_img)))
+    # print('finish processing')
+    
     #parsed_content_list = '\n'.join(parsed_content_list)
     
+    image = image_orig
+    label_coordinates = label_coordinates_orig
+    parsed_content_list = parsed_content_list_orig
     
     return image, label_coordinates, parsed_content_list
 

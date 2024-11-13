@@ -29,7 +29,7 @@
             "console": "integratedTerminal",
             "justMyCode": false,
             "args": [
-                "/home/lius/桌面/Screenshot_1730875408.png"
+                "/home/lius/图片/屏幕截图/屏幕截图_20241113_151902.png"
             ],
             "env": {
                 "PYTHONPATH": "${workspaceFolder}"
